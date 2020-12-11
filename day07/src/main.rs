@@ -1,7 +1,7 @@
 use std::error::Error;
-use std::io::BufRead;
+// use std::io::BufRead;
 
-use daggy::Dag;
+// use daggy::Dag;
 use regex::Regex;
 
 #[derive(Debug)]
@@ -41,6 +41,7 @@ fn parse_line(line: &str) -> Result<(std::string::String, Option<Vec<BagRec>>), 
     // };
     // println!("{:?}: {:?}, {:?}, {:?}", line, c1, c2, num);
     // Ok((c1, c2, num))
+    Ok(("WIP".into(),None))
 }
 
 fn main() {
