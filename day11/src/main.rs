@@ -1,16 +1,23 @@
 use std::io::BufRead;
 
-enum SeatType (
-    Occupied
-    Empty
-    Floor
-);
+#[allow(dead_code)]
+enum SeatType {
+    Occupied,
+    Empty,
+    Floor,
+}
 
-struct Rec
+struct Rec {}
+
+fn line2rec(_line : &str) -> Rec {
+    Rec{}
+}
+
 fn main() {
-    let recs = std::io::stdin()
+    let _recs : Vec<Rec> = std::io::stdin()
         .lock()
         .lines()
-        .map(|line| line2rec(line)).collect();
+        .filter_map(Result::ok)
+        .map(|line| line2rec(&line)).collect();
     println!("Hello, world!");
 }
