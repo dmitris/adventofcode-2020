@@ -4,7 +4,7 @@ use std::error::Error;
 use std::io;
 use std::io::BufRead;
 
-fn add_rule<'a>(line: &'a str, rules: &mut HashMap<String, String>) -> Result<(), Box<dyn Error>> {
+fn add_rule(line: &str, rules: &mut HashMap<String, String>) -> Result<(), Box<dyn Error>> {
     let mut s = line.splitn(2, ": ");
     let key = s.next().ok_or("bad input / key")?.to_owned();
     let val = s.next().ok_or("bad input / value")?.to_owned();
